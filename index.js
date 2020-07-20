@@ -1,8 +1,16 @@
 const express = require('express');
 const routes = require('./routes');
+const mongoose = require('mongoose');
 
 // starting app
 const app = express();
+
+// mongodb conecction
+mongoose.connect('mongodb://localhost/restapi', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
+
 
 
 // routes
