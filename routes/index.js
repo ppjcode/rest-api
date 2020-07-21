@@ -1,14 +1,10 @@
 const express = require('express');
 const router = express.Router();
-
+const clientsController = require('../controllers/clientController');
 
 module.exports = () => {
-    router.get('/', (req, res) => {
-        res.send(`Test succesfully`);
-    });
-    router.get('/about', (req, res) => {
-        res.send(`About me`);
-    });
+
+    router.post('/clients', clientsController.newClient);
 
     return router;
 };
