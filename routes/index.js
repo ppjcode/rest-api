@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const clientsController = require('../controllers/clientController');
 const productsController = require('../controllers/productsController');
+const ordersController = require('../controllers/ordersController');
 
 module.exports = () => {
 
@@ -44,6 +45,23 @@ module.exports = () => {
 
     // delete one product
     router.delete('/products/:id', productsController.deleteProduct);
+
+    /* ORDERS */
+
+    // create a order
+    router.post('/orders', ordersController.newOrder);
+
+    // show all orders
+    router.get('/orders', ordersController.showOrders);
+
+    // show one order
+    router.get('/orders/:id', ordersController.showOrder);
+
+    // update one order
+    router.put('/orders/:id', ordersController.updateOrder);
+
+    // delete one order
+    router.delete('/orders/:id', ordersController.deleteOrder);
 
     return router;
 };
