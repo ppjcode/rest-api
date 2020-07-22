@@ -17,6 +17,13 @@ const clientsSchema = new Schema({
     email: {
         type: String,
         unique: true,
-        lowercase: true
+        lowercase: true,
+        trim: true
+    },
+    phone: {
+        type: String,
+        trim: true
     }
 });
+
+module.exports = mongoose.model('Clients', clientsSchema);
