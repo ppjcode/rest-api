@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const routes = require('./routes');
 const bodyParser = require('body-parser');
-
+const mongoose = require('mongoose');
 
 // starting app
 const app = express();
@@ -13,13 +13,9 @@ mongoose.connect('mongodb://localhost/restapi', {
     useUnifiedTopology: true
 });
 
-
-
 // middlewares
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-
-
 
 // routes
 app.use('/', routes());
