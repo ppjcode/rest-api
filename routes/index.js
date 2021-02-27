@@ -6,62 +6,69 @@ const ordersController = require('../controllers/ordersController');
 
 module.exports = () => {
 
-    /** CLIENTS */
+    
+    /***************** 
+     **** CLIENTS **** 
+     *****************/
 
-    // create client
-    router.post('/clients', clientsController.newClient);
-
-    // show all clients
+    // SHOW ALL CLIENTS
     router.get('/clients', clientsController.showClients);
 
-    // show one client
+    // SHOW ONE CLIENT
     router.get('/clients/:id', clientsController.showClient);
 
-    // update one client
+    // CREATE CLIENT
+    router.post('/clients', clientsController.newClient);
+
+    // UPDATE ONE CLIENT
     router.put('/clients/:id', clientsController.updateClient);
 
-    // delete one client
+    // DELETE ONE CLIENT
     router.delete('/clients/:id', clientsController.deleteClient);
 
-    /** PRODUCTS */
 
-    // create product
-    router.post('/products',
-        productsController.uploadFile,
-        productsController.createProduct
-    );
 
-    // show all products
-    router.get('/products', productsController.showProducts);
+    /***************** 
+     *** PRODUCTS ***
+     *****************/
+
+    // CREATE PRODUCT
+    // router.post('/products',
+    //     productsController.uploadFile,
+    //     productsController.createProduct
+    // );
+
+    // SHOW ALL PRODUCTS
+    // router.get('/products', productsController.showProducts);
 
     // show one product
-    router.get('/products/:id', productsController.showProduct);
+    // router.get('/products/:id', productsController.showProduct);
 
     // update one product
-    router.put('/products/:id',
-        productsController.uploadFile,
-        productsController.updateProduct
-    );
+    // router.put('/products/:id',
+    //     productsController.uploadFile,
+    //     productsController.updateProduct
+    // );
 
     // delete one product
-    router.delete('/products/:id', productsController.deleteProduct);
+    // router.delete('/products/:id', productsController.deleteProduct);
 
     /* ORDERS */
 
     // create a order
-    router.post('/orders', ordersController.newOrder);
+    // router.post('/orders', ordersController.newOrder);
 
     // show all orders
-    router.get('/orders', ordersController.showOrders);
+    // router.get('/orders', ordersController.showOrders);
 
     // show one order
-    router.get('/orders/:id', ordersController.showOrder);
+    // router.get('/orders/:id', ordersController.showOrder);
 
     // update one order
-    router.put('/orders/:id', ordersController.updateOrder);
+    // router.put('/orders/:id', ordersController.updateOrder);
 
     // delete one order
-    router.delete('/orders/:id', ordersController.deleteOrder);
+    // router.delete('/orders/:id', ordersController.deleteOrder);
 
     return router;
 };
